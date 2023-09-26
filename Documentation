@@ -5,13 +5,17 @@ PROCEDURE-
 •	XML to JSON
 •	JSON to Excel
 
+VERSIONS-
+•	NodeJS – 18.14.0 (LTS)
+•	NPM – 9.3.1
+
 MODULES/LIBRARIES USED-
 •	xml2js – To parse the XML.
 •	xlsx – To create the Excel file.
 •	npm install xml2js xlsx
 
 ES6 (ECMAScript 2015)-
-•	We use ‘import’ statements to import modules instead of using ‘require’.
+•	We use ‘import’ statements to import modules instead of using ‘require’ as Modules are new ES6 features and are more compatible whereas ‘require’ is outdated.  
 
 •	Using require –
 const fs = require(‘fs’);
@@ -41,17 +45,18 @@ OTHER LIBRARIES
 2.	This library also supports asynchronous operations.
 
 •	Alternatives to ‘xml2js’ library-
-1.	xml-js
-2.	xml2json
-3.	fast-xml-parser
+1.	xml-js (Performance is a concern while dealing with large XML documents)
+2.	xml2json (Doesn’t provide built-in support for XML schema validation)
+3.	fast-xml-parser (Performance is a concern while dealing with large XML documents)
 
 •	Why xlsx?
 1.	It has an active community and is simple to use.
 2.	It offers both client-side and server-side compatibility and thus can be used on the browser(client side) and NodeJS (server-side).
 
 •	Alternatives to ‘xlsx’ library-
-1.	exceljs
-2.	SheetJS/js-xlsx
+1.	Exceljs (Smaller community and user base)
+2.	SheetJS/js-xlsx (Integration challenges)
+
 
 CODING BEST PRACTICES
 •	Use camelCase for variable and function names.
