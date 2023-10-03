@@ -6,8 +6,12 @@ PROCEDURE-
 • JSON to Excel
 
 VERSIONS-
-• NodeJS – 18.14.0 (LTS)
-• NPM – 9.3.1
+• NodeJS – 18.18.0 (LTS)
+• NPM – 9.8.1
+• Prettier – 3.0.3
+• Nodemon - 3.0.1
+• Eslint - 8.50.0
+
 
 MODULES/LIBRARIES USED-
 • xml2js – To parse the XML.
