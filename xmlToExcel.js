@@ -21,6 +21,17 @@ export function convertXmlToExcel(xmlFilePath, excelFilePath, cb) {
         return;
       }
 
+      // Function to add formatting
+      function formatRange(sheet, range, style) {
+        for (let row = range.s.r; row <= range.e.r; row++) {
+          for (let col = range.s.c; col <= range.e.c; col++) {
+            const reference = xlsx.utils.encode_cell({ r: row, c: col });
+            if (!sheet[reference]) continue;
+            sheet[reference].s = style;
+          }
+        }
+      }
+
       try {
         //Define movies and series data from the parsed JavaScript object
         const moviesData = jsObject.binge.movies.movie;
@@ -32,17 +43,6 @@ export function convertXmlToExcel(xmlFilePath, excelFilePath, cb) {
 
         // Create new Workbook
         const wb = xlsx.utils.book_new();
-
-        // Function to add formatting
-        function formatRange(sheet, range, style) {
-          for (let row = range.s.r; row <= range.e.r; row++) {
-            for (let col = range.s.c; col <= range.e.c; col++) {
-              const reference = xlsx.utils.encode_cell({ r: row, c: col });
-              if (!sheet[reference]) continue;
-              sheet[reference].s = style;
-            }
-          }
-        }
 
         // Add worksheets to workbook
         xlsx.utils.book_append_sheet(wb, moviesWs, 'Movies');
