@@ -4,7 +4,7 @@ const excelFilePath= 'task.xlsx'
 
 convertXmlToExcel(xmlFilePath,excelFilePath,(err, result)=>{
     if(err){
-        console.error('error', err)
+        console.error('Unexpected Error happened', err)
     } else {
         console.log('result', result)
     }
